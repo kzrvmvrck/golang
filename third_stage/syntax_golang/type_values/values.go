@@ -13,4 +13,6 @@ func main() {
     fmt.Println(true || false)
     fmt.Println(!true)
 
+    fmt.Println("Git never die")
+
 }
