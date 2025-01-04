@@ -2,6 +2,11 @@ package main
 
 import "fmt"
 
+func modifityArrays(arr [3]int) []int {
+	arr[0] = 10
+	return arr[:]
+}
+
 func main() {
 	// Массив нумерованная последовательность элементов одного типа с фиксированной длиной
 	var a [5]int
@@ -23,5 +28,35 @@ func main() {
 		}
 	}
 	fmt.Println("2 range array: ", twoArrays)
+
+	// Уроки chatagpt
+	var myArr [5]int
+	myArr[0] = 12
+	myArr[1] = 13
+	myArr[2] = 14
+	myArr[3] = 15
+	myArr[4] = 16
+
+	fmt.Println(myArr)
+
+	var myArrOne = [5]int{1, 2, 3, 4, 5}
+	fmt.Println(myArrOne, len(myArrOne))
+
+	xRes := len(myArrOne)
+	xResOne := int(xRes) - 1
+
+	fmt.Println(xResOne)
+
+	// Определение массива автоматически
+	myArrAuto := [...]int{1, 2, 3, 4, 5, 6, 7, 8}
+	fmt.Println(myArrAuto, len(myArrAuto))
+
+	for index := 0; index < len(myArrAuto); index++ {
+		fmt.Println(myArrAuto[index])
+	}
+
+	arrTestInFunc := [3]int{1, 2, 3}
+	arrTestInFuncOne := modifityArrays(arrTestInFunc)
+	fmt.Println(arrTestInFuncOne, arrTestInFunc)
 
 }

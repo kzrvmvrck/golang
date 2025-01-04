@@ -50,4 +50,12 @@ func main() {
 
 	fmt.Println(wer)
 
+	arr := [5]int{1, 2, 3, 4, 5}
+	slice := arr[:]
+
+	fmt.Println(slice)
+
+	slice = append(slice, 5)
+	fmt.Println(slice, "after used function append")
+
 }
