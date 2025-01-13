@@ -10,6 +10,7 @@ func main() {
 
 	q := 20
 	fmt.Println(q)
+	fmt.Println()
 
 	var b, c int = 1, 2
 	fmt.Println(b, c) // Числовые переменные

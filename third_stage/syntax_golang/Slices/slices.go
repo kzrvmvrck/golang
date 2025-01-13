@@ -2,6 +2,22 @@ package main
 
 import "fmt"
 
+func appendSlice(baseSlice []string, value string) []string {
+	newSlice := []string{}
+	fmt.Println(newSlice)
+	fmt.Println(len(baseSlice))
+
+	for indexBaseSlice := 0; indexBaseSlice < len(baseSlice); indexBaseSlice++ {
+		if indexBaseSlice == (len(baseSlice) - 1) {
+			newSlice[len(baseSlice)-1] = value
+		} else {
+			newSlice[indexBaseSlice] = baseSlice[indexBaseSlice]
+		}
+
+	}
+	return baseSlice
+}
+
 func main() {
 	s := make([]string, 3) // Создание слисеров осуществляется при помощи функции make([]string, len). Указываются при это тип данных и дрина среза
 	fmt.Println("emp slice:", s)
@@ -56,6 +72,21 @@ func main() {
 	fmt.Println(slice)
 
 	slice = append(slice, 5)
-	fmt.Println(slice, "after used function append")
+	fmt.Printf("%d after used function append \n", slice)
+
+	appArr := []string{"Jack", "Bryan", "Maks", "Tom", "Sergey", "Oleg"}
+	fmt.Println(appArr)
+
+	selfAppendArr := append(appArr, "Kyrt")
+	fmt.Println(selfAppendArr)
+
+	massAppendArr := append(appArr, "Devi", "Jons", "Alex")
+	fmt.Println(massAppendArr)
+
+	// Тут получается фигня. Он не меняет слайс базовый, в по сути у меня 3 разных
+
+	// Пробуем через функцию
+	appendSlice(appArr, "Kyrt")
+	fmt.Println(appArr)
 
 }
